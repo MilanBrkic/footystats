@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Lilita+One&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    /* color: #114B5F; */
+    color: black;
+    background: whitesmoke;
+    /* background: black; */
+}
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    margin: 0;
+    padding: 0;
+}
+
+
+tr:nth-child(even) {
+    background-color: white;
+    /* background-color: rgb(118, 184, 132); */
+    
+}
+
+
+tr:nth-child(odd) {
+    background-color: gainsboro;
+    /* background-color: rgb(118, 184, 132); */
+    
+}
+
+
+td{
+    border: 2px solid black;
+    color: #114B5F;
+    font-weight: bold;
+}
+
+td:nth-child(3){
+    background: #17a2b8;
+}
+
+td:nth-child(4){
+    background: #dc3545;
+}
+
+
+#ball{
+    width: 40px;
+}
+
+.navbar-brand{
+    font-family: 'Lilita One', cursive;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.nav-link{
+    font-family: 'Lilita One', cursive;
+    font-size: 20px;
+}
+
+#league_update_div {
+    visibility: hidden;
+}
+
+.td_hidden{
+    visibility: hidden;
+    
+}
+
+.th_hidden{
+    border: 2px solid black;
+    border-right: hidden;
+    border-top: hidden;
+    border-bottom: hidden;
+    background-color: rgb(102, 179, 102);
+}
+
+.green-glow{
+    border:  4px solid red;
+    box-shadow: 0 0 10px #DC143C;
+    
+}
+
+#navbarrow{
+    background: white;
+}
+
+
+
+#navContainer{
+    background: none;
+    color: #114B5F;
+}
+
+#name_leagues_insert,#name_league_update  {
+    border-radius: 5px;
+}
+
+
+
+#red{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+
+.navbar-custom{
+    background-color: black;
+}
+
+.bg-custom{
+    background-color: black;
+}
+
+.navbar-custom {
+    background-color: #ff5500;
+}
+
+#navbarMain{
+    background: lightgrey;
+    
+}
+
+#league_update_div{
+    padding-top: 20px;
+}
+
+#bodyContainer{
+    /* background: #88D498; */
+    background-image: url("../img/pitch2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+    
+    /* margin-top: 10px; */
+    
+}
+
+
+
+.navbar-nav{
+    padding-bottom: 0;
+}
+
+
+
+#containerFooter{
+    background: lightgrey;
+    
+    height: 100%;
+}
+
+footer{
+    font-weight: bold;
+    align-content: center;
+    justify-content: center;
+}
+
+.hidden_error{
+    visibility: hidden;
+    font-weight: bold;
+    color: red;
+}
