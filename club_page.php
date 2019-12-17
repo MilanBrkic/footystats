@@ -36,7 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="player_page.php">Players<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Players<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="club_page.php" tabindex="-1" aria-disabled="true">Clubs</a>
