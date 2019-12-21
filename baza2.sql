@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2019 at 12:07 PM
+-- Generation Time: Dec 18, 2019 at 01:49 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -55,8 +55,9 @@ INSERT INTO `club` (`id`, `name`, `stadium`, `league_id`) VALUES
 (14, 'Inter', 'Giuseppe Meazza', 3),
 (15, 'Ajax', 'Johan Cruyff Arena', 9),
 (16, 'Leicester City', 'King Power Stadium', 2),
-(19, 'Villareal', 'El Madrigal', 1),
-(20, 'Partizan', 'JNA', 13);
+(20, 'Partizan', 'JNA', 13),
+(26, 'Zvizda', 'Rajko Mitic', 13),
+(39, 'Villareal', 'El Madrigal', 1);
 
 -- --------------------------------------------------------
 
@@ -116,14 +117,15 @@ INSERT INTO `nation` (`id`, `name`) VALUES
 (13, 'Croatia'),
 (14, 'Russia'),
 (15, 'Senegal'),
-(16, 'Algeria'),
 (17, 'Belgium'),
 (18, 'Chile'),
 (19, 'Colombia'),
 (20, 'Danmark'),
 (21, 'Poland'),
 (22, 'Wales'),
-(170, 'Sweden');
+(170, 'Sweden'),
+(205, 'Villareal'),
+(208, 'Montenegro');
 
 -- --------------------------------------------------------
 
@@ -167,7 +169,10 @@ INSERT INTO `player` (`id`, `firstname`, `lastname`, `age`, `position`, `goals`,
 (18, 'Luka', 'Modric', 34, 'midfielder', 74, 13, 3),
 (19, 'Sergio', 'Ramos', 33, 'defender', 113, 1, 3),
 (20, 'Marcelo', '', 23, 'defender', 45, 12, 3),
-(22, 'Mo', 'Salah', 28, 'attacker', 150, 8, 5);
+(22, 'Mo', 'Salah', 28, 'attacker', 150, 8, 5),
+(33, 'Arthur', 'Melo', 24, 'midfielder', 6, 1, 1),
+(36, 'Mesut', 'Ozil', 32, 'midfielder', 35, 4, 9),
+(37, 'Edinson', 'Cavani', 32, 'attacker', 432, 11, 13);
 
 --
 -- Indexes for dumped tables
@@ -209,25 +214,25 @@ ALTER TABLE `player`
 -- AUTO_INCREMENT for table `club`
 --
 ALTER TABLE `club`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `league`
 --
 ALTER TABLE `league`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `nation`
 --
 ALTER TABLE `nation`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
 
 --
 -- AUTO_INCREMENT for table `player`
 --
 ALTER TABLE `player`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- Constraints for dumped tables

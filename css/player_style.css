@@ -37,6 +37,12 @@ td{
     border: 2px solid black;
     color: #114B5F;
     font-weight: bold;
+  
+}
+
+td:nth-child(5), th:nth-child(5){
+    
+    width: 70px;
 }
 
 td:nth-child(8){
@@ -210,4 +216,15 @@ footer{
 
 #id_update_nations{
     width: 107%;
+}
+
+#sort_goals{
+    cursor:pointer;
+}
+
+.hidden_error{
+    visibility: hidden;
+    font-weight: bold;
+    color: red;
+    font-size: 12px;
 }

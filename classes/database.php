@@ -109,6 +109,7 @@ class Database{
             $q = "INSERT INTO ".$table." (".$row.") VALUES ('".$name_league."','".$id_nation."');";
         }
         else if($table=="club"){
+            
             $name = $values[0];
             $stadium = $values[1];
             $name_league = $values[2];
@@ -198,7 +199,7 @@ class Database{
 
             $this->select($table, "*", "name='".$nation->getName()."'");
             if($this->result->num_rows>0){
-                echo "<script>console.log('Objekat je vec unet')<script>";
+                // echo "<script>console.log('Objekat je vec unet')<script>";
                 throw new Exception("Objekat je vec unet");
             }
 
@@ -223,7 +224,7 @@ class Database{
             
             $this->select($table, "*", "l.name='".$league->getName()."' AND l.nation_id='".$nation_id."'");
             if($this->result->num_rows>0){
-                echo "<script>console.log('Objekat je vec unet')<script>";
+                // echo "<script>console.log('Objekat je vec unet')<script>";
             }
 
             $q="UPDATE ".$table." SET name='".$name."', nation_id='".$nation_id."' WHERE id=".$id;
@@ -251,11 +252,11 @@ class Database{
 
             $this->select($table, "*", "c.name='".$club->getName()."' AND c.stadium='".$stadium."' AND c.league_id='".$id_league."'");
             if($this->result->num_rows>0){
-                echo "<script>console.log('Objekat je vec unet')<script>";
+                // echo "<script>console.log('Objekat je vec unet')<script>";
             }
 
             $q="UPDATE ".$table." SET name='".$name."', stadium='".$stadium."', league_id='".$id_league."' WHERE id=".$id;
-            echo "<br><br>", $q;
+            
         }
         else if($table='player'){
             $id = $values[0];
@@ -288,7 +289,7 @@ class Database{
             $player = new Player($firstname, $lastname, $age, $position, $goals, $nation, $club);
             $this->select($table, "*", "p.firstname='".$firstname."' AND p.lastname='".$lastname."' AND p.age='".$age."' AND p.position='".$position."' AND p.goals='".$goals."' AND p.nation_id='".$nation_id."' AND p.club_id='".$club_id."'");
             if($this->result->num_rows>0){
-                echo "<script>console.log('Objekat je vec unet')<script>";
+                // echo "<script>console.log('Objekat je vec unet')<script>";
             }
             $q= "UPDATE ".$table." SET firstname='".$firstname."', lastname='".$lastname."', age='".$age."', position='".$position."', goals='".$goals."', nation_id='".$nation_id."', club_id='".$club_id."' WHERE id=".$id;
             

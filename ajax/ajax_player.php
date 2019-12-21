@@ -37,15 +37,32 @@
 
     ?>
 
-<div id="tabela_player" class="d-flex justify-content-center">
+
                 <table>
                     <tr>
                         <th>Firstname</th>
                         <th>Lastname</th>
                         <th>Age</th>
                         <th>Position</th>
-                        <th>Goals</th>
-                        <th>Nation</th>
+                        <?php
+                            try {
+                                $sort = $_POST['sort'];
+                                if(strpos($sort, '▲')){
+                                    $crud->select("player","*", null, "goals");
+                                    echo "<th id='sort_goals' onclick=sort(this)>Goals ▲</th>";
+                                }
+                                else if(strpos($sort, '▼')){
+                                    $crud->select("player","*", null, "goals desc");
+                                    echo "<th id='sort_goals' onclick=sort(this)>Goals ▼</th>";
+                                }else{
+                                    $crud->select("player","*", null, "goals desc");
+                                    echo "<th id='sort_goals' onclick=sort(this)>Goals ▼</th>";
+                                }
+                            } catch (Exception $e) {
+                                echo "<br> <b>EXCEPTION CAUGHT:</b> ",$e->getMessage();
+                            }
+                        ?>
+                        <th class="d-flex justify-content-center"> Nation</th>
                         <th>Club</th>
                         <th></th>
                         <th></th>
@@ -53,12 +70,6 @@
                     </tr>
                     
                     <?php
-                        $crud = new Database("baza2");
-                        try {
-                            $crud->select("player", "*", null, "position");
-                        } catch (Exception $e) {
-                            echo "<br> <b>EXCEPTION CAUGHT:</b> ",$e->getMessage();
-                        }
                             while($row = mysqli_fetch_array($crud->getResult())){
                                 echo "<tr>"; 
                                     echo "<td>", $row[1],"</td>";
@@ -72,8 +83,7 @@
                                     echo "<td><button class='btn btn-danger btn-sm' onclick=del(this)>Del</button></td>";
                                     echo "<td class='td_hidden'>",$row[0],"</td"; 
                                 echo "</tr>";
-                            }
-                            
+                            } 
                     ?>
                 </table>
-            </div>
+            

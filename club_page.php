@@ -98,7 +98,7 @@
                 <div id = 'club_insert_div'>
                     <h3>Add a new club:</h3>
                         <form method="post" id="club_insert"> 
-                            <b>Club:</b> <br>
+                            <b>Club: </b><span class="hidden_error" id="error_club_insert"></span> <br>
                             <input type="text" name="name_insert" id='name_club_insert' placeholder='Type in a new club'>
                             <br>
                             <b>Stadium:</b> <br>
@@ -133,7 +133,7 @@
                     <div id="club_update_div">
                         <h3>Update a club:</h3>
                             <form method="post" id="club_update"> 
-                                <b>Club:</b> <br>
+                                <b>Club:</b><span class="hidden_error" id="error_club_update">sads</span><br>
                                 <input type="text" name="name_update" id='name_club_update' placeholder='Type in a new club'>
                                 <input type="hidden" name="id_update" id='id_club_update'>
                                 <br>

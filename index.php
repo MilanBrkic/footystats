@@ -62,8 +62,8 @@
                         <th>Lastname</th>
                         <th>Age</th>
                         <th>Position</th>
-                        <th>Goals</th>
-                        <th>Nation</th>
+                        <th id="sort_goals" onclick=sort(this)>Goals ▼</th>
+                        <th class="d-flex justify-content-center">Nation</th>
                         <th>Club</th>
                         <th></th>
                         <th></th>
@@ -73,10 +73,8 @@
                     <?php
                         $crud = new Database("baza2");
                         try {
-                            // $values = array("21","Arthur", "Melo", "23", "midfielder", 4, "Brazil", "FC Barcelona");
                             
-                            // $crud->update('player', $values);
-                            $crud->select("player", "*", null, "position");
+                            $crud->select("player", "*", null, "goals desc");
                         } catch (Exception $e) {
                             echo "<br> <b>EXCEPTION CAUGHT:</b> ",$e->getMessage();
                         }
@@ -131,10 +129,11 @@
                         <form method="post" id="player_insert"> 
                             <div class="container firstlastname">
                                 <div class="row">
-                                    <div class="col-md-5 col-lg-5 col-xl-5">
-                                        <b>Firstname:</b> 
-                                    </div>
                                     <div class="col-md-7 col-lg-7 col-xl-7">
+                                    
+                                        <b>Firstname: </b><span class="hidden_error" id="error_player_insert">Cannot be empty</span> 
+                                    </div>
+                                    <div class="col-md-5 col-lg-5 col-xl-5">
                                         <b>Lastname:</b> 
                                     </div>
                                 </div>
@@ -146,10 +145,10 @@
                             
                             <div class="container firstlastname">
                                 <div class="row">
-                                    <div class="col-md-5 col-lg-5 col-xl-5">
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
                                         <b>Age:</b> 
                                     </div>
-                                    <div class="col-md-7 col-lg-7 col-xl-7">
+                                    <div class="col-md-6 col-lg-6 col-xl-6"">
                                         <b>Goals:</b> 
                                     </div>
                                 </div>
@@ -160,10 +159,10 @@
 
                             <div class="container firstlastname">
                                 <div class="row">
-                                    <div class="col-md-5 col-lg-5 col-xl-5">
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
                                         <b>Select a position:</b> 
                                     </div>
-                                    <div class="col-md-7 col-lg-7 col-xl-7">
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
                                         <b>Select a club:</b> 
                                     </div>
                                 </div>
@@ -224,7 +223,7 @@
                                 <div class="container firstlastname">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-6 col-xl-6">
-                                            <b>Firstname:</b> 
+                                            <b>Firstname:</b> <span class="hidden_error" id="error_player_update">Cannot be empty</span> 
                                         </div>
                                         <div class="col-md-6 col-lg-6 col-xl-6 clubs">
                                             <b>Lastname:</b> 

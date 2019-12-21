@@ -160,3 +160,9 @@ footer{
     align-content: center;
     justify-content: center;
 }
+
+.hidden_error{
+    visibility: hidden;
+    font-weight: bold;
+    color: red;
+}

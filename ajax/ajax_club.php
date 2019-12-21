@@ -4,6 +4,7 @@
 
             if(isset($_POST['club_insert']) && isset($_POST['stadium_insert']) && isset($_POST['league_insert'])){
                  $values = array($_POST['club_insert'], $_POST['stadium_insert'], $_POST['league_insert']);
+                
                 try {
                     $crud->insert('club',$values);
                 } catch (Exception $e) {
@@ -26,7 +27,7 @@
            }
            if(isset($_POST['id_update']) && isset($_POST['name_update']) && isset($_POST['stadium_update']) && isset($_POST['league_update'])){
                $values = array($_POST['id_update'],$_POST['name_update'],$_POST['stadium_update'], $_POST['league_update']); 
-               echo $values[0],$values[1],$values[2],$values[3];
+               
                try {
                   $crud->update('club',$values);
                } catch (Exception $e) {
@@ -36,7 +37,7 @@
 
     ?>
 
-<div id="tabela_club" class="d-flex justify-content-center">
+
                 <table>
                     <tr>
                         <th>Club</th>
@@ -69,4 +70,4 @@
                             
                     ?>
                 </table>
-            </div>
+            

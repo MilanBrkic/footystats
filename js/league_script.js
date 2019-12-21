@@ -4,7 +4,7 @@ var error_update_span = document.getElementById('error_league_update');
 
 
 var leagues;
-var par = 0;
+
 
 
 document.getElementById('name_league_insert').addEventListener("keyup", function(e){
@@ -44,7 +44,7 @@ function addLeague(e){
 
     getLeaguesNations();
     for(var i = 0;i<leagues.length;i++){
-        if(name=leagues[i][0] && nation_name==leagues[i][1]){
+        if(name==leagues[i][0] && nation_name==leagues[i][1]){
             error_insert_span.style.visibility="visible";
             error_insert_span.innerHTML = "League already exists";
             return;
@@ -145,7 +145,7 @@ function updateLeague(e){
 
     getLeaguesNations();
     for(var i = 0;i<leagues.length;i++){
-        if(name=leagues[i][0] && nation_name==leagues[i][1]){
+        if(name==leagues[i][0] && nation_name==leagues[i][1]){
             error_update_span.style.visibility="visible";
             error_update_span.innerHTML = "League already exists";
             return;
@@ -187,9 +187,9 @@ function getLeaguesNations(){
         leagues[i-1][1] = kolekcija_redova_pre[i].children[1].innerHTML;
     }
    
-    for(i=0;i<leagues.length;i++){
-        console.log(leagues[i][0], leagues[i][1]);
-    }
+    // for(i=0;i<leagues.length;i++){
+    //     console.log(leagues[i][0], leagues[i][1]);
+    // }
 }
 
-getLeaguesNations();
+
